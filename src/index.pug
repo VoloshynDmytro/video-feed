@@ -1,0 +1,27 @@
+doctype html
+html(lang='en')
+  head
+    title Video Feed
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black')
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic")
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
+    base(href='/')
+
+  body(ng-strict-di, ng-cloak)
+    app(layout-fill)
+
+    // Load Facebook SDK for JavaScript
+    #fb-root
+    script.
+      (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));

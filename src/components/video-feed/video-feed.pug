@@ -1,0 +1,6 @@
+.video-feed(layout='column', layout-align="space-around center")
+  video-feed-item.video-feed__item.md-padding(
+    ng-repeat='video in $ctrl.videos'
+    video='video',
+    flex-xs,
+    flex-gt-xs='50')

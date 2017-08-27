@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  client-test:
+    container_name: video-feed-test
+    image: client-angularjs
+    environment:
+      NODE_ENV: test
+    build:
+      context: .
+      dockerfile: test.dockerfile
+    command: npm run test

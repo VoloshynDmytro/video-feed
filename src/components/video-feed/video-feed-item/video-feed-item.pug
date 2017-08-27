@@ -1,0 +1,10 @@
+md-card
+  md-card-header
+    md-card-header-text
+      span.md-title {{ $ctrl.video.title}}
+      span.md-subhead {{ $ctrl.video.viewsAbbr }} views
+  video-feed-player(ng-if='!$ctrl.video.isMissed()', video='$ctrl.video', flex)
+
+  figure(ng-if='$ctrl.video.isMissed()')
+    img.md-card-image(ng-src='{{$ctrl.placeholder}}', alt='{{$ctrl.video.missed}}')
+    figcaption {{$ctrl.video.missed}}

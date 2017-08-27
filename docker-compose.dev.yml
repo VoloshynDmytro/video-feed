@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  client:
+    container_name: video-feed-dev
+    image: client-angularjs
+    environment:
+      NODE_ENV: development
+    build:
+      context: .
+      dockerfile: dev.dockerfile
+    expose:
+      - "3001"
+    ports:
+      - "3001:3001"
+    volumes:
+      - .:/home/video-feed/app
+      - /home/video-feed/app/node_modules
+    command: npm run serve

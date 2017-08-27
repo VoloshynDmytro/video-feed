@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  client:
+    container_name: video-feed-e2e-test
+    image: client-nginx-angularjs
+    environment:
+      NODE_ENV: test
+    build:
+      args:
+        NODE_ENV: test
+
+  e2e:
+    image: mrsheepuk/protractor
+    environment:
+      NODE_ENV: test
+      BASEURL: http://client:80/
+    links:
+      - client
+    depends_on:
+      - client
+    volumes:
+      - ./client:/project
