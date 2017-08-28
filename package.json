@@ -1,7 +1,7 @@
 {
-  "name": "updates-manager-client",
+  "name": "video-feed",
   "version": "0.0.1",
-  "description": "The main goal of this project is to implement Web Interface to configure and manage updates.",
+  "description": "video feed app",
   "main": "dist/app.js",
   "scripts": {
     "serve": "webpack-dev-server --config config/webpack/webpack.development.config.js --watch --content-base src/",
